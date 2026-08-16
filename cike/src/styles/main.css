@@ -1,0 +1,98 @@
+/* ===== 此刻 · 全局样式 ===== */
+/* 断点：移动端 ≤768px / 平板 769-1200px / 电脑 ≥1201px */
+
+:root {
+  --cike-primary: #ff2e51;
+  --cike-primary-soft: #ffe4e9;
+  --cike-gradient: linear-gradient(135deg, #ff2e51, #ff7a59);
+  --cike-bg: #f6f7f9;
+  --cike-card: #ffffff;
+  --cike-text: #222222;
+  --cike-text-sub: #666666;
+  --cike-text-faint: #999999;
+  --cike-border: #f0f0f2;
+  --cike-topic: #5a7d9c;
+  --cike-radius: 12px;
+  --cike-header-h: 60px;
+
+  /* Element Plus 主题色覆写 */
+  --el-color-primary: #ff2e51;
+  --el-color-primary-light-3: #ff6a84;
+  --el-color-primary-light-5: #ff92a6;
+  --el-color-primary-light-7: #ffb9c6;
+  --el-color-primary-light-8: #ffcdd7;
+  --el-color-primary-light-9: #ffe4e9;
+  --el-color-primary-dark-2: #e62647;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body, #app { height: 100%; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--cike-bg);
+  color: var(--cike-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background: #d9d9de; border-radius: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* ===== 通用工具 ===== */
+.cike-avatar {
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  flex-shrink: 0;
+  overflow: hidden;
+  user-select: none;
+}
+
+.cike-cover {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 600;
+  letter-spacing: 2px;
+  user-select: none;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== 页面容器：三端自适应 ===== */
+.page-wrap {
+  min-height: 100vh;
+  padding-bottom: calc(56px + env(safe-area-inset-bottom)); /* 移动端底部 tab */
+}
+.page-main {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* 平板端 */
+@media (min-width: 769px) {
+  .page-wrap { padding-bottom: calc(56px + env(safe-area-inset-bottom)); }
+  .page-main { max-width: 860px; }
+}
+
+/* 电脑端：隐藏底部 tab，改用左侧导航 */
+@media (min-width: 1201px) {
+  .page-wrap { padding-bottom: 0; padding-left: 220px; }
+  .page-main { max-width: 1080px; padding: 0 24px; }
+}
